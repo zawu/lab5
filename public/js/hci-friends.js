@@ -4,6 +4,18 @@
 $(document).ready(function() {
 	initializePage();
 })
+var friendName;
+
+$(".friends a").click(function(event){
+	event.preventDefault();
+	friendName = $(this).text();
+	console.log(anagrammedName(friendName));
+	console.log(friendName);
+	$(this).text(anagrammedName(friendName));
+	//event.anagrammedName($(this).text());
+})
+//console.log($(".friends a").length);
+
 
 /*
  * Function that is called when the document is ready.
@@ -14,7 +26,6 @@ function initializePage() {
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
-	
 	if (name == "Doug Engelbart") {
 		return "Notable Grudge";
 	} 
